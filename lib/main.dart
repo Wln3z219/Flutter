@@ -22,43 +22,98 @@ class MyApp extends StatelessWidget {
           title: const Center(child: Text("MobileApp")),
         ),
 
-        body: Column(
-          children: [
-            Center(child: Image.asset("assets/images/panda.png")),
-            const Text(
-              "ขอบคุณที่ใช้บริการ",
-              style: TextStyle(fontSize: 30),
-            ),
-            const Text("เรายินดีที่ได้เป็นส่วนหนึ่งในการเดินทางของคุณ"),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text("สรุปรายละเอียดการชาร์จ"),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              Center(child: Image.asset("assets/images/panda.png")),
+              const Text(
+                "ขอบคุณที่ใช้บริการ",
+                style: TextStyle(fontSize: 30),
+              ),
+              const Text("เรายินดีที่ได้เป็นส่วนหนึ่งในการเดินทางของคุณ"),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text("สรุปรายละเอียดการชาร์จ"),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Icon(Icons.calendar_month),
+                      Text("วันที่ชาร์จ"),
+                    ],
+                  ),
+                  Text("5 กันยายน 2555")
+                ],
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Icon(Icons.calendar_month),
+                      Text("วันที่ชาร์จ"),
+                    ],
+                  ),
+                  Text("5 กันยายน 2555")
+                ],
+              ),
+          Table(
+          border: TableBorder.all(),
+          columnWidths: const <int, TableColumnWidth>{
+            0: FlexColumnWidth(),
+            1: FlexColumnWidth(),
+          },
+          defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+          children: const <TableRow>[
+            TableRow(
               children: [
-                Row(
-                  children: [
-                    Icon(Icons.calendar_month),
-                    Text("วันที่ชาร์จ"),
-                  ],
+                Text(
+                  "Volt",
+                  textAlign: TextAlign.center,
                 ),
-                Text("5 กันยายน 2555")
+                TextField(
+                  decoration: InputDecoration(),
+                ),
               ],
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            TableRow(
               children: [
-                Row(
-                  children: [
-                    Icon(Icons.calendar_month),
-                    Text("วันที่ชาร์จ"),
-                  ],
+                Text(
+                  "Virus_Amount",
+                  textAlign: TextAlign.center,
                 ),
-                Text("5 กันยายน 2555")
+                TextField(
+                  decoration: InputDecoration(),
+                ),
               ],
-            )
+            ),
+            TableRow(
+              children: [
+                Text(
+                  "Energy Amount",
+                  textAlign: TextAlign.center,
+                ),
+                TextField(
+                  decoration: InputDecoration(),
+                ),
+              ],
+            ),
           ],
+        ),
+              const Padding(
+                padding: EdgeInsets.all(20.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: '??',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
 
         // appBar: AppBar(
