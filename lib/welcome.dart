@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/detail_page.dart';
+import 'package:flutter_application_1/httpbasic.dart';
+import 'package:flutter_application_1/my_listpage.dart';
 import 'Homepage.dart';
 import 'login.dart';
 
@@ -70,58 +73,7 @@ class Welcome extends StatelessWidget {
                   Text("5 กันยายน 2555")
                 ],
               ),
-              Table(
-                border: TableBorder.all(),
-                columnWidths: const <int, TableColumnWidth>{
-                  0: FlexColumnWidth(),
-                  1: FlexColumnWidth(),
-                },
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: const <TableRow>[
-                  TableRow(
-                    children: [
-                      Text(
-                        "Volt",
-                        textAlign: TextAlign.center,
-                      ),
-                      TextField(
-                        decoration: InputDecoration(),
-                      ),
-                    ],
-                  ),
-                  TableRow(
-                    children: [
-                      Text(
-                        "Virus_Amount",
-                        textAlign: TextAlign.center,
-                      ),
-                      TextField(
-                        decoration: InputDecoration(),
-                      ),
-                    ],
-                  ),
-                  TableRow(
-                    children: [
-                      Text(
-                        "Energy Amount",
-                        textAlign: TextAlign.center,
-                      ),
-                      TextField(
-                        decoration: InputDecoration(),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const Padding(
-                padding: EdgeInsets.all(20.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: '??',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-              ),
+
               const SizedBox(height: 20),
               TextButton(
                 onPressed: () {
@@ -132,6 +84,34 @@ class Welcome extends StatelessWidget {
                 },
                 child: const Text("Go to Login Page"),
               ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Httpbasic()),
+                  );
+                },
+                child: const Text("Go to HttpBasic Page"),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const DetailPage(productId: 0)),
+                  );
+                },
+                child: const Text("Go to HttpBasic Page"),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyListPage()),
+                  );
+                },
+                child: const Text("Go to List Page"),
+              ),
+              
             ],
           ),
         ),
